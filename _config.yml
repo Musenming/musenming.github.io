@@ -4,7 +4,7 @@ SEOTitle: 木森的博客 | Musen Blog
 header-img: img/post-bg-desk.jpg
 email: musen@cqu.edu.cn
 description: "Wherever your heart heads, always be."
-keyword: "Musen, Musen Blog, 木森的博客, Musen, iOS, Apple, iPhone"
+keyword: "Musen, Musen Blog, 木森的博客, Musen"
 url: "http://musenming.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/musenming/musenming.github.io.git" # you code repository
@@ -63,11 +63,11 @@ kramdown:
 gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: c4377a029099e45c94d3                            #生成的clientID
- clientSecret: b61b8f0a8c70df861af335a566d3cebadf0d7b38    #生成的clientSecret
- repo: musenming.github.io    #仓库名称
- owner: musenming    #github用户名
- admin: musenming
- distractionFreeMode: true #是否启用类似FB的阴影遮罩
+  clientSecret: b61b8f0a8c70df861af335a566d3cebadf0d7b38    #生成的clientSecret
+  repo: musenming.github.io    #仓库名称
+  owner: musenming    #github用户名
+  admin: musenming
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
 
