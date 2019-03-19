@@ -60,15 +60,36 @@ kramdown:
 disqus_username: musenming
 
 # Gitalk
-gitalk:
-  enable: true    #是否开启Gitalk评论
-  clientID: c4377a029099e45c94d3                            #生成的clientID
-  clientSecret: b61b8f0a8c70df861af335a566d3cebadf0d7b38    #生成的clientSecret
-  repo: musenming.github.io    #仓库名称
-  owner: musenming    #github用户名
-  admin: musenming
-  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+#gitalk:
+#  enable: true    #是否开启Gitalk评论
+#  clientID: c4377a029099e45c94d3                            #生成的clientID
+# clientSecret: b61b8f0a8c70df861af335a566d3cebadf0d7b38    #生成的clientSecret
+# repo: musenming.github.io    #仓库名称
+# owner: musenming    #github用户名
+# admin: musenming
+# distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
+<!-- Gitalk 评论 start  -->
+
+<!-- Link Gitalk 的支持文件  -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+<div id="gitalk-container"></div>     <script type="text/javascript">
+    var gitalk = new Gitalk({
+
+    // gitalk的主要参数
+    clientID: `c4377a029099e45c94d3`,
+    clientSecret: `b61b8f0a8c70df861af335a566d3cebadf0d7b38`,
+    repo: `musenming.github.io`,
+    owner: 'musenming',
+    admin: ['musenming'],
+    id: 'window.location.pathname',
+    distractionFreeMode: true,
+    
+    });
+    gitalk.render('gitalk-container');
+</script> 
+<!-- Gitalk end -->
 
 # 统计
 
