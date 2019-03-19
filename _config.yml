@@ -62,8 +62,8 @@ kramdown:
 # Gitalk
 gitalk:
   enable: true    #是否开启Gitalk评论
-  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
-  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
+  clientID: c4377a029099e45c94d3                            #生成的clientID
+  clientSecret: b61b8f0a8c70df861af335a566d3cebadf0d7b38    #生成的clientSecret
   repo: musenming.github.io    #仓库名称
   owner: musenming    #github用户名
   admin: musenming
