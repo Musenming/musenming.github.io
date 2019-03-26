@@ -57,13 +57,13 @@ kramdown:
 
 # 评论系统
 #Disqus（https://disqus.com/）
-disqus_username: musenming
+#disqus_username: musenming
 
 # Gitalk
 gitalk:
-  enable: false    #是否开启Gitalk评论
-  clientID: c4377a029099e45c94d3                            #生成的clientID
-  clientSecret: b61b8f0a8c70df861af335a566d3cebadf0d7b38    #生成的clientSecret
+  enable: true    #是否开启Gitalk评论
+  clientID: 2317022e71fe545c7289                            #生成的clientID
+  clientSecret: 3eaca93e88aaa69aa6d780dd701b9096a7051011    #生成的clientSecret
   repo: musenming.github.io    #仓库名称
   owner: musenming    #github用户名
   admin: musenming
