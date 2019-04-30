@@ -16,7 +16,7 @@
 var mouseSum = 0;
 jQuery(document).ready(function($) {
     $("body").click(function(e) {
-        var a = new Array("气气","呼呼");
+        var a = new Array("气气","呼呼","小傻子","大傻子");
         var $i = $("<span/>").text(a[mouseSum]);
         mouseSum = (mouseSum + 1) % a.length;
         var x = e.pageX,
