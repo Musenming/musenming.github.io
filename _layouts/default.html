@@ -1,3 +1,4 @@
+<script language="javascript" type="text/javascript" src="https://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +12,35 @@
     {{ content }}
 
     {% include footer.html %}
+<script type = "text/javascript">
+var mouseSum = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("气气","呼呼");
+        var $i = $("<span/>").text(a[mouseSum]);
+        mouseSum = (mouseSum + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 9999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "#6651ff"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
 
 
 <!-- Image to hack wechat -->
