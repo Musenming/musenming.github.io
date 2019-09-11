@@ -2,7 +2,7 @@
 layout:     post
 title: CUPY_INSTALL
 subtitle: 环境配置
-date:       2019-05-08
+date:       2019-07-30
 author:     Musen
 header-img: img/post-bg-keybord.jpg
 catalog: true
