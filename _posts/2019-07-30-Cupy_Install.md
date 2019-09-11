@@ -33,7 +33,7 @@ NumPy的
 
 9.在安装CuPy之前，我们建议您升级setuptools并pip：
 
-$ pip install -U setuptools pip
+>pip install -U setuptools pip
 *注意：在Windows上，CuPy仅支持Python 3.6.0或更高版本。*
 
 ##可选库：
@@ -47,28 +47,28 @@ NCCL （用于执行集体多GPU /多节点计算的库）
 轮子（预编译的二进制包）可用于Linux（Python 2.7或更高版本）和Windows（Python 3.6或更高版本）。软件包名称因您在主机上安装的CUDA版本而异。
 
 (For CUDA 8.0)
-$ pip install cupy-cuda80
+>pip install cupy-cuda80
 
 (For CUDA 9.0)
-$ pip install cupy-cuda90
+>pip install cupy-cuda90
 
 (For CUDA 9.1)
-$ pip install cupy-cuda91
+>pip install cupy-cuda91
 
 (For CUDA 9.2)
-$ pip install cupy-cuda92
+>pip install cupy-cuda92
 
 (For CUDA 10.0)
-$ pip install cupy-cuda100
+>pip install cupy-cuda100
 
 (For CUDA 10.1)
-$ pip install cupy-cuda101
+>pip install cupy-cuda101
 
 *注意：这些轮子中包含最新版本的cuDNN和NCCL库。您不必手动安装它们。*
 
 使用轮子时，请注意不要同时安装多个CuPy包。这些包和cupy包中的任何一个（源安装）都相互冲突。请确保只安装了一个CuPy包（cupy或者cupy-cudaXXXX是CUDA版本）：
 
-$ pip freeze | grep cupy
+>pip freeze | grep cupy
 
 从源代码安装CuPy 
 建议尽可能使用轮子。但是，如果轮子不能满足您的要求（例如，您正在运行非Linux环境或想要使用轮子不支持的CUDA / cuDNN / NCCL版本），您还可以从源代码构建CuPy。
@@ -77,11 +77,11 @@ $ pip freeze | grep cupy
 
 # Ubuntu 16.04
 
-$ apt-get install g++
+>apt-get install g++
 
 # CentOS 7
 
-$ yum install gcc-c++
+>yum install gcc-c++
 
 ##注意
 
@@ -95,20 +95,20 @@ $ yum install gcc-c++
 
 您可以通过安装CuPy包pip。
 
-$ pip install cupy
+>pip install cupy
 
 ##使用压缩包
 
 源代码树的压缩包通过提供或发布说明页面。你可以从tarball安装CuPy：pip download cupy
 
-$ pip install cupy-x.x.x.tar.gz
+>pip install cupy-x.x.x.tar.gz
 
 您还可以从克隆的Git存储库安装CuPy的开发版本：
 
-$ git clone https://github.com/cupy/cupy.git
+>git clone https://github.com/cupy/cupy.git
 
-$ cd cupy
+>cd cupy
 
-$ pip install .
+>pip install .
 
 如果您使用从GitHub下载的源代码树，则需要安装Cython 0.28.0或更高版本（）。pip install cython
