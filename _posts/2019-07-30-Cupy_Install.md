@@ -9,7 +9,7 @@ catalog: true
 tags:
     - Data_Science
 ---
-##要求：
+## 要求：
 您需要具有以下组件才能使用CuPy。
 
 1.NVIDIA CUDA GPU
@@ -36,14 +36,14 @@ NumPy的
 >pip install -U setuptools pip
 *注意：在Windows上，CuPy仅支持Python 3.6.0或更高版本。*
 
-##可选库：
+## 可选库：
 只有安装了相应的库，才会启用CuPy中的某些功能。
 
 cuDNN（加速深度神经网络计算的库）
 支持的版本：v5，v5.1，v6，v7，v7.1，v7.2，v7.3，v7.4和v7.5。
 NCCL （用于执行集体多GPU /多节点计算的库）
 支持的版本：v1.3.4，v2，v2.1，v2.2，v2.3和v2.4。
-##安装CuPy 
+## v安装CuPy 
 轮子（预编译的二进制包）可用于Linux（Python 2.7或更高版本）和Windows（Python 3.6或更高版本）。软件包名称因您在主机上安装的CUDA版本而异。
 
 (For CUDA 8.0)
@@ -83,11 +83,11 @@ NCCL （用于执行集体多GPU /多节点计算的库）
 
 >yum install gcc-c++
 
-##注意
+## 注意
 
 从源代码安装CuPy时，如果在安装时这些库不可用，则将禁用可选库（cuDNN和NCCL）提供的功能。有关说明，请参阅安装cuDNN和NCCL。
 
-##注意
+## 注意
 
 如果升级或降级CUDA Toolkit，cuDNN或NCCL的版本，则可能需要重新安装CuPy。有关详细信息，请参阅重新安装CuPy。
 
