@@ -12,7 +12,7 @@ github_repo: "https://github.com/musenming/musenming.github.io.git" # you code r
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "心之所向，素履以往"
-sidebar-avatar: /img/bk.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/right.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
