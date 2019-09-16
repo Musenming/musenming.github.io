@@ -55,10 +55,11 @@ TCP提供的是面向连接的、可靠的数据流传输，而UDP提供的是�
 
 ## 5. 写一个程序现7层议模型中从顶层到层的报文流。针对每一层，程序应包恬一个单独的协议函数。协议头为64个字符序列。每个协议函数有两个参数：从高层议传下来的报文（一个char缓冲区}），和报文的大小。这个函数在报文前面貼上报文头，并在标准输出上打印出新的报文，然后调用较低层协议的协议函数。程片输入是一个应用程序的报文（一个至多80字符的序列）。
 
-```C++
-#include <cstring>    
-#include <iostream> 
-    
+```cpp   
+#include<iostream>
+
+#include<cstring>
+   
 using namespace std; 
 /*函数声明*/
 void first_layer(string message, int len);
@@ -129,7 +130,6 @@ int main() {
     first_layer(message,len);  
     return 0;    
 }
-
 ```
 
 
