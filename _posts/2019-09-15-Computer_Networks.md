@@ -39,7 +39,101 @@ TCP提供的是面向连接的、可靠的数据流传输，而UDP提供的是�
 机网络分为总线拓扑结构、星型拓扑结构、环形拓扑结构、树型拓扑结构和网格型网络五
 种类型。
 
+## 5. 写一个程序现7层议模型中从顶层到层的报文流。针对每一层，程序应包恬一个单独的协议函数。协议头为64个字符序列。每个协议函数有两个参数：从高层议传下来的报文（一个char缓冲区}），和报文的大小。这个函数在报文前面貼上报文头，并在标准输出上打印出新的报文，然后调用较低层协议的协议函数。程片输入是一个应用程序的报文（一个至多80字符的序列）。
 
+```C++
+#include "stdio.h"    
+#include "stdlib.h"    
+#include "string.h"    
+#include "assert.h"    
+void application_layer_send(char *buffer, int len);    
+void presentation_layer_send(char *buffer, int len);    
+void session_layer_send(char *buffer, int len);    
+void transport_layer_send(char *buffer, int len);    
+void network_layer_send(char *buffer, int len);    
+void datalink_layer_send(char *buffer, int len);    
+void physical_layer_send(char *buffer, int len);    
+char* attach_header(char *buffer, char *header, int *len2) {    
+int len = strlen(buffer);    
+int hlen = strlen(header);    
+*len2 = len + hlen;    
+char *buffer2 = (char*)malloc(*len2 + 1);    
+memcpy(buffer2, header, hlen);    
+memcpy(buffer2 + hlen, buffer, len);    
+buffer2[*len2] = '\0';    
+return buffer2;    
+}    
+void application_layer_send(char *buffer, int len) {    
+static char header[] = "application_layer_header;";    
+assert(strlen(buffer) == len);    
+int len2 = 0;    
+char *buffer2 = attach_header(buffer, header, &len2);    
+printf("%s\n", buffer2);    
+presentation_layer_send(buffer2, len2);    
+free(buffer2);    
+}    
+void presentation_layer_send(char *buffer, int len) {    
+char header[] = "presentation_layer_header;";    
+assert(strlen(buffer) == len);    
+int len2 = 0;    
+char *buffer2 = attach_header(buffer, header, &len2);    
+printf("%s\n", buffer2);    
+session_layer_send(buffer2, len2);    
+free(buffer2);    
+}    
+void session_layer_send(char *buffer, int len) {    
+char header[] = "session_layer_header;";    
+assert(strlen(buffer) == len);    
+int len2 = 0;    
+char *buffer2 = attach_header(buffer, header, &len2);    
+printf("%s\n", buffer2);    
+transport_layer_send(buffer2, len2);    
+free(buffer2);    
+}    
+void transport_layer_send(char *buffer, int len) {    
+char header[] = "transport_layer_header;";    
+assert(strlen(buffer) == len);    
+int len2 = 0;    
+char *buffer2 = attach_header(buffer, header, &len2);    
+printf("%s\n", buffer2);    
+network_layer_send(buffer2, len2);    
+free(buffer2);    
+}    
+void network_layer_send(char *buffer, int len) {    
+char header[] = "network_layer_header;";    
+assert(strlen(buffer) == len);    
+int len2 = 0;    
+char *buffer2 = attach_header(buffer, header, &len2);    
+printf("%s\n", buffer2);    
+datalink_layer_send(buffer2, len2);    
+free(buffer2);    
+}    
+void datalink_layer_send(char *buffer, int len) {    
+char header[] = "datalink_layer_header;";    
+assert(strlen(buffer) == len);    
+int len2 = 0;    
+char *buffer2 = attach_header(buffer, header, &len2);    
+printf("%s\n", buffer2);    
+physical_layer_send(buffer2, len2);    
+free(buffer2);    
+}    
+void physical_layer_send(char *buffer, int len) {    
+char header[] = "physical_layer_header;";    
+assert(strlen(buffer) == len);    
+int len2 = 0;    
+char *buffer2 = attach_header(buffer, header, &len2);    
+printf("%s\n", buffer2);    
+free(buffer2);    
+}    
+void application_routine() {    
+char message[] = "Hello World!";    
+application_layer_send(message, strlen(message));    
+}    
+int main(int argc, char *argv[]) {    
+application_routine();    
+return 0;    
+}
+```
 
 
 
