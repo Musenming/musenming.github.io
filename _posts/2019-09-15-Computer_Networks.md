@@ -56,79 +56,71 @@ TCP提供的是面向连接的、可靠的数据流传输，而UDP提供的是�
 ## 5. 写一个程序现7层议模型中从顶层到层的报文流。针对每一层，程序应包恬一个单独的协议函数。协议头为64个字符序列。每个协议函数有两个参数：从高层议传下来的报文（一个char缓冲区}），和报文的大小。这个函数在报文前面貼上报文头，并在标准输出上打印出新的报文，然后调用较低层协议的协议函数。程片输入是一个应用程序的报文（一个至多80字符的序列）。
 
 ```cpp   
-#include<iostream>
+#include <cstring> 
 
-#include<cstring>
-   
+#include <iostream>
+ 	
 using namespace std; 
 /*函数声明*/
-void first_layer(string message, int len);
-void second_layer(string message, int len);
-void third_layer(string message, int len);
-void fourth_layer(string message, int len);
-void fifth_layer(string message, int len);
-void sixth_layer(string message, int len);
-void seventh_layer(string message, int len);      
+void first_layer(string message);
+void second_layer(string message);
+void third_layer(string message);
+void fourth_layer(string message);
+void fifth_layer(string message);
+void sixth_layer(string message);
+void seventh_layer(string message);      
 /*应用层实现*/
-void first_layer(string message, int len) {    
-    static string header= "application_layer_header;";       
-    int len2 = 0;    
-    string new_message = message + ' '+ header;  
-    cout<<new_message<<endl;   
-    second_layer(new_message, len2);       
+void first_layer(string message) {    
+	static string header= "application_layer_header;";       	    
+	string new_message = message + ' '+ header;  
+	cout<<new_message<<endl;   
+	second_layer(new_message);       
 } 
 /*表示层实现*/   
-void second_layer(string message, int len) {    
-    string header = "presentation_layer_header;";       
-    int len2 = 0;    
-    string new_message = message + ' '+ header;
-    cout<<new_message<<endl;      
-    third_layer(new_message, len2);       
+void second_layer(string message) {    
+	string header = "presentation_layer_header;";       	    
+	string new_message = message + ' '+ header;
+	cout<<new_message<<endl;      
+	third_layer(new_message);       
 }  
 /*会话层实现*/  
-void third_layer(string message, int len) {    
-    string header = "session_layer_header;";       
-    int len2 = 0;    
-    string new_message = message + ' '+ header;
-    cout<<new_message<<endl;      
-    fourth_layer(new_message, len2);       
+void third_layer(string message) {    
+	string header = "session_layer_header;";       	    
+	string new_message = message + ' '+ header;
+	cout<<new_message<<endl;      
+	fourth_layer(new_message);       
 } 
 /*传输层实现*/   
-void fourth_layer(string message, int len) {    
-    string header = "transport_layer_header;";       
-    int len2 = 0;    
-    string new_message = message + ' '+ header; 
-    cout<<new_message<<endl;     
-    fifth_layer(new_message, len2);       
+void fourth_layer(string message) {    
+	string header = "transport_layer_header;";       	    
+	string new_message = message + ' '+ header; 
+	cout<<new_message<<endl;     
+	fifth_layer(new_message);       
 } 
 /*网络层实现*/   
-void fifth_layer(string message, int len) {    
-    string header = "network_layer_header;";       
-    int len2 = 0;    
-    string new_message = message + ' '+ header; 
-    cout<<new_message<<endl;       
-    sixth_layer(new_message, len2);       
+void fifth_layer(string message) {    
+	string header = "network_layer_header;";       	    
+	string new_message = message + ' '+ header; 
+	cout<<new_message<<endl;       
+	sixth_layer(new_message);       
 }   
 /*链路层实现*/ 
-void sixth_layer(string message, int len) {    
-    string header = "datalink_layer_header;";       
-    int len2 = 0;    
-    string new_message = message + ' '+ header;  
-    cout<<new_message<<endl;    
-    seventh_layer(new_message, len2);       
+void sixth_layer(string message) {    
+	string header = "datalink_layer_header;";       	    
+	string new_message = message + ' '+ header;  
+	cout<<new_message<<endl;    
+	seventh_layer(new_message);       
 } 
 /*物理层实现*/   
-void seventh_layer(string message, int len) {    
-    string header = "physical_layer_header;";       
-    int len2 = 0;    
-    string new_message = message + ' '+ header;
-    cout<<new_message<<endl;         
+void seventh_layer(string message) {    
+	string header = "physical_layer_header;";       	    
+	string new_message = message + ' '+ header;
+	cout<<new_message<<endl;         
 }     
 int main() { 
-    string message = "This is a new message!"; 
-    int len = message.length();
-    first_layer(message,len);  
-    return 0;    
+	string message = "This is a new message!"; 
+	first_layer(message);  
+	return 0;    
 }
 ```
 
