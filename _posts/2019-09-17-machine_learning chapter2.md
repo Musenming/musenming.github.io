@@ -87,6 +87,7 @@ P=\frac{TP}{TP+FP}、R=\frac{TP}{TP+FN}$$
 
 **①TPR与R值相同**
 ## 2.6 试述错误率与ROC曲线之间的关系
+
 $$TPR=\frac{TP}{TP+FN}、FPR=\frac{FP}{TN+FP}$$
 
 $$E(f;D)=\frac{FP+FN}{TN+FP+TP+FN}$$ 
