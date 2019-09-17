@@ -88,6 +88,7 @@ P=\frac{TP}{TP+FP}、R=\frac{TP}{TP+FN}$$
 **①TPR与R值相同**
 ## 2.6 试述错误率与ROC曲线之间的关系
 $$TPR=\frac{TP}{TP+FN}、FPR=\frac{FP}{TN+FP}$$
+
 $$E(f;D)=\frac{FP+FN}{TN+FP+TP+FN}$$ 
 
 ROC曲线上的每一个点都对应了一组（TPR，FPR）值，我一直在考虑两者之间是否存在代数关系，公式如上所示。
