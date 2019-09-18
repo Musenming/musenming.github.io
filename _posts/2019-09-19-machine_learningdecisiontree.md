@@ -42,7 +42,7 @@ $$Ent(D_2)=-(0log_2\frac{1}{2})=0$$
 
 ![版本空间.jpg](https://raw.githubusercontent.com/Musenming/musenming.github.io/master/img/%E7%89%88%E6%9C%AC%E7%A9%BA%E9%97%B4.jpg)
  
-**版本空间比决策树更加负责，版本空间包括了很多冗余情况**
+**版本空间比决策树更加复杂，版本空间包括了很多冗余情况**
 
 
 
