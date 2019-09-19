@@ -44,7 +44,62 @@ $$Ent(D_2)=-(0log_2\frac{1}{2})=0$$
  
 **版本空间比决策树更加复杂，版本空间包括了很多冗余情况**
 
+**代码参考：**
+```python
+import pandas as pd
+from sklearn import tree
+import graphviz
+import pydotplus
+from IPython.display import Image
 
+melon_data = pd.DataFrame(
+    [
+        ["青绿", "蜷缩", "浊响", True],
+        # ["乌黑", "蜷缩", "浊响", True],
+        # ["青绿", "硬挺", "清脆", False],
+        ["乌黑", "稍蜷", "沉闷", False],
+    ],
+    columns=["色泽", "根蒂", "敲声", "target"],
+)
+
+dic = {
+    "青绿": "Green",
+    "乌黑": "black",
+    "蜷缩": "Curled_up",
+    "硬挺": "Starched",
+    "稍蜷": "Slightly_curled_up",
+    "浊响": "dull",
+    "清脆": "liquidly",
+    "沉闷": "rumble",
+    "色泽": "color",
+    "根蒂": "root",
+    "敲声": "sound",
+}
+
+# one-hot coder
+for f in melon_data.columns[0:3]:
+    melon_data[f] = melon_data[f].map(dic)
+    dummies = pd.get_dummies(melon_data[f], prefix=dic[f])
+    melon_data = melon_data.join(dummies)
+melon_data = melon_data.drop(["色泽", "根蒂", "敲声"], axis=1)
+
+# train a clf
+clf = tree.DecisionTreeClassifier()
+clf_fit = clf.fit(melon_data.drop(["target"], axis=1), melon_data["target"])
+
+# plot it！
+dot_data = tree.export_graphviz(
+    clf_fit,
+    out_file=None,
+    feature_names=melon_data.columns[1:],
+    class_names=[u"Good", u"Bad"],
+    filled=True,
+    rounded=True,
+    special_characters=True,
+)
+graph = pydotplus.graph_from_dot_data(dot_data)
+Image(graph.create_png())
+```
 
 
 
