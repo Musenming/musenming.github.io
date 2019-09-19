@@ -1,6 +1,6 @@
 ---
 layout:     post
-title: graphviz包安装
+title: 数据画图graphviz包安装
 subtitle: 环境配置
 date:       2019-09-19
 author:     Musen
