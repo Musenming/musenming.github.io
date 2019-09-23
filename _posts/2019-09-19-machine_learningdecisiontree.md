@@ -11,7 +11,7 @@ tags:
 ---
 <script type="text/x-mathjax-config"> MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ['\\(','\\)'] ], processEscapes: true } }); </script> <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
 
-## 采用决策树方法 学习 练习1.1 中（两个样例）的决策树，并与练习1.1的版本空间进行比较。
+### 采用决策树方法 学习 练习1.1 中（两个样例）的决策树，并与练习1.1的版本空间进行比较。
 
 样例为：
 
