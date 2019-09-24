@@ -30,6 +30,7 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"]="-1"    
 import tensorflow as tf
 ```
+
 ### 3. Use tensorflow for GPU
 
 - System will automatically assign which GPU device to run your code.
