@@ -33,18 +33,43 @@ $$Max.data.rate = 2560 \times 1600 \times 24 \times 60=5898.24 Mbps$$
 
 $$B=\frac{5898.24Mbps}{log_2(1+S/N)}$$
 
+$$\Delta\lambda= \lambda ^2 \Delta f= \lambda ^2 B $$
+
 - I give a table to show the change of bandwidth as the $(S/N)$ changes:
   
-|   $S/N$  | $Minimum.bandwidth(Mbps)$ |
-|:------:|:-----------------------:|
-|  0.01  |          193000         |
-|   0.1  |          20100          |
-|    1   |           2770          |
-|   10   |           799           |
-|   100  |           415           |
-|  1000  |           277           |
-|  10000 |           208           |
-| 100000 |           166           |
+| S/N | Minimum bandwidth(Mbps) | Wavewidth(microns) |
+|:----:|:---------------------:|:--------------------:|
+| 0.01 | 410875.6268103587 | 0.002314599364365021 |
+| 0.1 | 42895.19162233679 | 0.00024164291280583062 |
+| 1 | 5898.24 | 3.3226752e-05 |
+| 10 | 1704.9737211812185 | 9.604685295987532e-06 |
+| 100 | 885.8595157692852 | 4.99034193883364e-06 |
+| 1000 | 591.7634301490028 | 3.3336006565060497e-06 |
+| 10000 | 443.881971259965 | 2.50053510476447e-06 |
+| 100000 | 355.10912388270026 | 2.0004480645392117e-06 |
+
+Code:
+```python
+import math
+def bandwidth(rsn):
+    max_rate = 5898.24
+    rec = math.log(1+rsn,2)
+    b = float(max_rate/rec)
+    return b
+
+def wavewidth(B):
+    m = 1.3**2
+    c = 3*(10**8)
+    rec = float(m*B/c)
+    return(rec)
+                
+print("|","S/N","|","Minimum bandwidth(Mbps)","|","Wavewidth(microns)","|")
+for i in range(1,9):
+    rsn = 10**(i-3)
+    bd = bandwidth(rsn)
+    wd = wavewidth(bd)
+    print("|",rsn,"|",bd,"|",wd,"|")
+```
 
 ### 2. What is the difference, if any, between the demodulator part of a modem and the coder part of a codec? (After all, both convert analog signals to digital ones.)
 
